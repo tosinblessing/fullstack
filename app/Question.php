@@ -26,7 +26,7 @@ class Question extends Model
         public function getUrlAttribute(){
             // return route('questions.show', $this->id );
             // to show
-            return route('questions.show', $this->slug);
+            return route('questions.show', $this->slug );
         }
         public function getCreatedDateAttribute(){
             // created_date

@@ -19,7 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::resource('questions', 'QuestionsController');
-route::resource('questions', 'QuestionsController')->except('show');
-
+Route::resource('questions', 'QuestionsController')->except('show');
+//showing slug instead of id
 Route::get('/questions/{slug}', 'QuestionsController@show')->name('questions.show');
