@@ -34,7 +34,7 @@ class Question extends Model
         }
         public function getStatusAttribute(){
             // dd($this->answers);
-            if($this->answers > 0){
+            if($this->answers_count > 0){
                 if($this->best_answer_id){
                     return "answered-accepted";
                 }
@@ -48,4 +48,7 @@ class Question extends Model
         public function answers(){
             return $this->hasMany(Answer::class);
         }
-}
+        //if acess with $question->answers->count()
+        //using for each it here will throw erorr
+
+    }
