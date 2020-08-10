@@ -36,6 +36,12 @@ class Answer extends Model
             $answer->question->save();
         });
     }
+    public function getCreatedDateAttribute(){
+        // created_date
+        return $this->created_at->diffForHumans();
+    }
+
+
 
 }
 
