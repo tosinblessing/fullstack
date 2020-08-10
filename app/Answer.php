@@ -16,5 +16,26 @@ class Answer extends Model
     public function getBodyHtmlAttribute(){
         return \Parsedown::instance()->text($this->body);
     }
+    //working on event
+    // public static function boot(){
+    //      parent::boot();
+
+    //      static::created(function ($answer){
+    //         echo "Answer Created\n";
+    //      });
+    //      static::saved(function ($answer){
+    //         echo "Answer saved\n";
+    //      });
+    // }
+    //working on event
+    public static function boot(){
+        parent::boot();
+
+        static::created(function ($answer){
+            $answer->question->increment('answers_count');
+            $answer->question->save();
+        });
+    }
+
 }
 

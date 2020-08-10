@@ -13,7 +13,8 @@ $factory->define(App\Question::class, function (Faker $faker) {
         'body' => $faker->paragraphs(rand(3,7), true),
         'views' => rand(0,10),
         //edit to answer-count because of collaiion
-        'answers_count' => rand(0,10),
+        //answers_count this wont be needed because of static class in Answer.php
+        // 'answers_count' => rand(0,10),
         'votes' => rand(-3,10)
     ];
 });
