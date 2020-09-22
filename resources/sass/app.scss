@@ -4,8 +4,13 @@
 // Variables
 @import 'variables';
 
+$fa-font-path: "../webfonts";
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
 
 .counttosin{
     margin-right: 30px;
@@ -40,4 +45,42 @@
 }
 form.form-delete{
     display: inline;
+}
+.vote-controls{
+    min-width: 60px;
+    margin-right: 30px;
+    text-align:center;
+    color: $gray-700;
+    // $gray-700: #495057 !default;
+    span, a{
+        display: block;
+    }
+    span
+    {
+        .votes-count{
+            font-size: 25px;
+        }
+        .favorites-count{
+            font-size: 12px;
+        }
+    }
+        a{
+            cursor: pointer;
+            color: $gray-600;
+
+            .off, .off:hover{
+                color: $gray-500;
+            }
+
+            .favorite{
+                 .favorited, .favorited:hover{
+                color: #ffed4a;
+            }
+            }
+            .vote-accepted{
+                color: #38c172;;
+
+            }
+        }
+
 }
